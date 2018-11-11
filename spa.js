@@ -422,7 +422,7 @@ MongoClient.connect(dbHost, function(err, db){
   if (err) throw err;
   dbObject = db;
   // check for empty database
-  db.collection('charts').count({}, {limit:1}, function(err, result) {
+  db.collection['charts'].count({}, {limit:1}, function(err, result) {
     if (err) throw err;
     if (result <= 0) {
       newDB(db);
